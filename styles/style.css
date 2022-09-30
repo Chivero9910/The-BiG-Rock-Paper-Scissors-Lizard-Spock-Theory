@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    background-color: rgb(237, 237, 237);
+}
+
+#my-canvas {
+    background-color: darkgray;
+}
+
+#start-btn {
+    background-color: #C21E0F;
+    color: white;
+    padding: 10px 20px;
+    font-size: 35px;
+    margin-top: -70px;
+    margin-left: -520px;
+    position: absolute;
+    border-radius: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+   
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+#my-canvas {
+    display: none;
+}
