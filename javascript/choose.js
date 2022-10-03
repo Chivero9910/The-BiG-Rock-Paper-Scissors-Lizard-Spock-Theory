@@ -13,6 +13,8 @@ class Choose {
       this.img.src = "/images/spok.png";
     }
 
+    this.selection = seleccion
+
     this.x = xParam;
     this.y = yParam;
     this.h = 30;

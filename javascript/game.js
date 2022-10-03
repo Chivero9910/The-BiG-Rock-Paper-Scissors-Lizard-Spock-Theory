@@ -18,6 +18,8 @@ class Game {
       this.lagarto,
       this.spock,
     ];
+    this.election1;
+    this.election2;
   }
 
   //FUNCIONES
@@ -26,17 +28,72 @@ class Game {
     ctx.drawImage(this.chooseText, 0, 0, canvas.width, canvas.height);
   };
 
+  gameOver = () => {
+    this.isGameOn = false;
+    canvas.style.display = "none";
+    resultScreen.style.display = "flex";
+  };
+
   mainCharacterCollision = () => {
-    this.chooseArr.forEach((eachChoose) => {
+    this.chooseArr.forEach((eachChoose, index) => {
       if (
         this.mainCharacter.x < eachChoose.x + eachChoose.w &&
         this.mainCharacter.x + this.mainCharacter.w > eachChoose.x &&
         this.mainCharacter.y < eachChoose.y + eachChoose.h &&
         this.mainCharacter.h + this.mainCharacter.y > eachChoose.y
       ) {
-        console.log("collision");
+        console.log("seleccion jugador", eachChoose.selection);
+        this.election1 = eachChoose.selection;
+        this.gameOver();
+        let randomNum1 = Math.random() * 4;
+        let randomNum = Math.floor(randomNum1);
+        this.election2 = this.chooseArr[randomNum].selection;
+        console.log(this.election2);
+        this.conditionals();
       }
     });
+  };
+
+  conditionals = () => {
+    if (this.election1 === "piedra" && this.election2 === "tijeras") {
+      console.log("piedra gana");
+    } else if (this.election1 === "tijeras" && this.election2 === "lagarto") {
+      console.log("gana tijeras");
+    } else if (this.election1 === "lagarto" && this.election2 === "spock") {
+      console.log("gana lagarto");
+    } else if (this.election1 === "spock" && this.election2 === "tijeras") {
+      console.log("gana spock");
+    } else if (this.election1 === "tijeras" && this.election2 === "papel") {
+      console.log("gana tijeras");
+    } else if (this.election1 === "papel" && this.election2 === "spock") {
+      console.log("gana papel");
+    } else if (this.election1 === "spock" && this.election2 === "piedra") {
+      console.log("gana spock");
+    } else if (this.election1 === "piedra" && this.election2 === "lagarto") {
+      console.log("gana piedra");
+    } else if (this.election1 === "papel" && this.election2 === "piedra") {
+      console.log("gana papel");
+    } else if (this.election2 === "piedra" && this.election1 === "tijeras") {
+      console.log("piedra gana");
+    } else if (this.election2 === "tijeras" && this.election1 === "lagarto") {
+      console.log("gana tijeras");
+    } else if (this.election2 === "lagarto" && this.election1 === "spock") {
+      console.log("gana lagarto");
+    } else if (this.election2 === "spock" && this.election1 === "tijeras") {
+      console.log("gana spock");
+    } else if (this.election2 === "tijeras" && this.election1 === "papel") {
+      console.log("gana tijeras");
+    } else if (this.election2 === "papel" && this.election1 === "spock") {
+      console.log("gana papel");
+    } else if (this.election2 === "spock" && this.election1 === "piedra") {
+      console.log("gana spock");
+    } else if (this.election2 === "piedra" && this.election1 === "lagarto") {
+      console.log("gana piedra");
+    } else if (this.election2 === "papel" && this.election1 === "piedra") {
+      console.log("gana papel");
+    } else {
+        console.log(empate)
+    }
   };
 
   gameLoop = () => {

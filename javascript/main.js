@@ -1,10 +1,12 @@
 // VARIABLES GLOBALES
 //--------------------------------------------
+
 const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d");
 const startScreen = document.querySelector("#splash-screen");
 const startBtn = document.querySelector("#start-btn");
-const gameOverScreen = document.querySelector("gameover-screen");
+const resultScreen = document.querySelector("#result-screen");
+const canvasResult = document.querySelector("#result-canvas");
 let gameObj;
 
 // STATE MANAGEMENT FUNCTIONS
