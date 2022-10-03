@@ -12,5 +12,16 @@ class MainCharacter {
     }
 
     //Movimiento del MainCharacter
-    mainCharacterX
+    mainCharacterX = () => {
+        this.x -= 20;
+    }
+    mainCharacterXPlus = () => {
+        this.x += 20;
+    }
+    mainCharacterY = () => {
+        this.y -= 20;
+    }
+    mainCharacterYPlus = () => {
+        this.y += 20;
+    }
 }

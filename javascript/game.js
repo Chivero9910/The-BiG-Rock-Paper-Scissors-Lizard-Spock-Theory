@@ -6,6 +6,7 @@ class Game {
         this.chooseText = new Image();
         this.chooseText.src = "./images/mainText.png"
         this.mainCharacter = new MainCharacter();
+        this.piedra = new Choose(30, 100, "piedra");
     }
 
     //FUNCIONES
@@ -18,6 +19,7 @@ class Game {
         //Dibujado de los elementos
         this.drawFondo();
         this.mainCharacter.drawMainCharacter();
+        this.piedra.drawChoose();
         
         
 

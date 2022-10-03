@@ -27,3 +27,16 @@ const startGame = () => {
 //--------------------------------------------
 
 startBtn.addEventListener("click", startGame);
+
+//Movimiento mainCharacter
+window.addEventListener("keydown", (event) => {
+  if(event.code === "ArrowLeft"){
+    gameObj.mainCharacter.mainCharacterX()
+  } else if(event.code === "ArrowRight"){
+    gameObj.mainCharacter.mainCharacterXPlus();
+  } else if(event.code === "ArrowUp") {
+    gameObj.mainCharacter.mainCharacterY();
+  } else if(event.code === "ArrowDown") {
+    gameObj.mainCharacter.mainCharacterYPlus()
+  }
+})
