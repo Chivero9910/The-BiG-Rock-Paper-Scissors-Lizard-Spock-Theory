@@ -11,6 +11,11 @@ class Game {
     this.tijeras = new Choose(30, 300, "tijeras");
     this.lagarto = new Choose(30, 380, "lagarto");
     this.spock = new Choose(30, 460, "spock");
+    this.piedraResult = new Choose(30, 140, "piedra");
+    this.papelResult = new Choose(30, 220, "papel");
+    this.tijerasResult = new Choose(30, 300, "tijeras");
+    this.lagartoResult = new Choose(30, 380, "lagarto");
+    this.spockResult = new Choose(30, 460, "spock");
     this.chooseArr = [
       this.piedra,
       this.papel,
@@ -28,11 +33,11 @@ class Game {
     ctx.drawImage(this.chooseText, 0, 0, canvas.width, canvas.height);
   };
 
-  gameOver = () => {
-    this.isGameOn = false;
-    canvas.style.display = "none";
-    resultScreen.style.display = "flex";
-  };
+  // gameOver = () => {
+  //   this.isGameOn = false;
+  //   canvas.style.display = "none";
+  //   resultScreen.style.display = "flex";
+  // };
 
   mainCharacterCollision = () => {
     this.chooseArr.forEach((eachChoose, index) => {
@@ -44,8 +49,8 @@ class Game {
       ) {
         console.log("seleccion jugador", eachChoose.selection);
         this.election1 = eachChoose.selection;
-        this.gameOver();
-        let randomNum1 = Math.random() * 4;
+        // this.gameOver();
+        let randomNum1 = Math.random() * 5;
         let randomNum = Math.floor(randomNum1);
         this.election2 = this.chooseArr[randomNum].selection;
         console.log(this.election2);
@@ -55,44 +60,111 @@ class Game {
   };
 
   conditionals = () => {
+    console.log(yourElection.innerHTML)
     if (this.election1 === "piedra" && this.election2 === "tijeras") {
-      console.log("piedra gana");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, piedra aplasta a tijeras";
+        yourElection.src = "/images/piedra.png"
+      
     } else if (this.election1 === "tijeras" && this.election2 === "lagarto") {
-      console.log("gana tijeras");
-    } else if (this.election1 === "lagarto" && this.election2 === "spock") {
-      console.log("gana lagarto");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, tijeras decapitan al lagarto";
+        yourElection.src = "/images/tijeras.png"
+    } else if (this.election1 === "tijeras" && this.election2 === "lagarto") {
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, tijeras decapitan al lagarto";
+        yourElection.src = "/images/tijeras.png"
+    } else if (this.election1 === "lagarto" && this.election2 === "papel") {
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, lagarto devora al papel";
+        yourElection.src = "/images/lagarto.png"
     } else if (this.election1 === "spock" && this.election2 === "tijeras") {
-      console.log("gana spock");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, Spock aplasta a tijeras";
+        yourElection.src = "/images/spok.png"
     } else if (this.election1 === "tijeras" && this.election2 === "papel") {
-      console.log("gana tijeras");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+      yourElection.src = "/images/tijeras.png"
+      this.piedra.drawChoose();
     } else if (this.election1 === "papel" && this.election2 === "spock") {
-      console.log("gana papel");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, papel desaprueba a Spock";
+        yourElection.src = "/images/papel.png"
     } else if (this.election1 === "spock" && this.election2 === "piedra") {
-      console.log("gana spock");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, Spock desintegra la piedra";
+        yourElection.src = "/images/spok.png"
     } else if (this.election1 === "piedra" && this.election2 === "lagarto") {
-      console.log("gana piedra");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, piedra aplasta a lagarto";
+        yourElection.src = "/images/piedra.png"
     } else if (this.election1 === "papel" && this.election2 === "piedra") {
-      console.log("gana papel");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, papel envuelve la piedra";
+        yourElection.src = "/images/papel.png"
     } else if (this.election2 === "piedra" && this.election1 === "tijeras") {
-      console.log("piedra gana");
+      yourElection.src = "/images/tijeras.png"
+      yourElection.src = "/images/tijeras.png"
     } else if (this.election2 === "tijeras" && this.election1 === "lagarto") {
-      console.log("gana tijeras");
+      yourElection.src = "/images/lagarto.png"
     } else if (this.election2 === "lagarto" && this.election1 === "spock") {
-      console.log("gana lagarto");
-    } else if (this.election2 === "spock" && this.election1 === "tijeras") {
-      console.log("gana spock");
+      yourElection.src = "/images/spok.png"
+    } else if (this.election1 === "lagarto" && this.election2 === "papel") {
+      yourElection.src = "/images/papel.png"
+    }else if (this.election2 === "spock" && this.election1 === "tijeras") {
+      yourElection.src = "/images/tijeras.png"
     } else if (this.election2 === "tijeras" && this.election1 === "papel") {
-      console.log("gana tijeras");
+      yourElection.src = "/images/papel.png"
     } else if (this.election2 === "papel" && this.election1 === "spock") {
-      console.log("gana papel");
+      yourElection.src = "/images/spok.png"
     } else if (this.election2 === "spock" && this.election1 === "piedra") {
-      console.log("gana spock");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, piedra aplasta a tijeras";
+        yourElection.src = "/images/piedra.png"
     } else if (this.election2 === "piedra" && this.election1 === "lagarto") {
-      console.log("gana piedra");
+      yourElection.src = "/images/lagarto.png"
     } else if (this.election2 === "papel" && this.election1 === "piedra") {
-      console.log("gana papel");
+      this.isGameOn = false;
+      canvas.style.display = "none";
+      resultScreen.style.display = "flex";
+      winText.innerText =
+        "Enhorabuena, has ganado a Sheldon, papel envuelve a piedra";
+        yourElection.src = "/images/piedra.png"
     } else {
-        console.log(empate)
+      console.log("empate");
     }
   };
 
@@ -105,6 +177,7 @@ class Game {
     this.tijeras.drawChoose();
     this.lagarto.drawChoose();
     this.spock.drawChoose();
+  
 
     //Acciones y movimientos de los elementos
     this.mainCharacterCollision();

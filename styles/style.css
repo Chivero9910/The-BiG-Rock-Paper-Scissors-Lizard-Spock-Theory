@@ -9,6 +9,31 @@ canvas {
 #result-screen {
     display: none;
 }
+#result-screen button {
+  background-color: #c21e0f;
+  color: white;
+  padding: 10px 20px;
+  font-size: 35px;
+  margin-top: 500px;
+  margin-left: 200px;
+  position: absolute;
+  border-radius: 15px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#win-text {
+  position: absolute;
+  color: white;
+  font-size: 35px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 550px;
+  margin-top: 400px;
+  margin-left: 25px;
+  text-align: center;
+  -webkit-text-stroke: 1px #c21e0f
+}
 
 #start-btn {
   background-color: #c21e0f;
@@ -38,6 +63,13 @@ canvas {
 
 canvas {
   display: none;
+}
+
+#your-election{
+  height: 100px;
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 50px;
 }
 
 

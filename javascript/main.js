@@ -8,6 +8,12 @@ const startBtn = document.querySelector("#start-btn");
 const resultScreen = document.querySelector("#result-screen");
 const canvasResult = document.querySelector("#result-canvas");
 let gameObj;
+const buttonNext = document.createElement("button");
+buttonNext.type = "button";
+buttonNext.innerText = "Siguiente";
+resultScreen.appendChild(buttonNext);
+const winText = document.querySelector("#win-text");
+const yourElection = document.querySelector("#your-election");
 
 // STATE MANAGEMENT FUNCTIONS
 //--------------------------------------------
