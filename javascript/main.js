@@ -14,6 +14,15 @@ buttonNext.innerText = "Siguiente";
 resultScreen.appendChild(buttonNext);
 const winText = document.querySelector("#win-text");
 const yourElection = document.querySelector("#your-election");
+const rivalElection = document.querySelector("#rival-election");
+const yourElection2 = document.querySelector("#your-election2");
+const rivalElection2 = document.querySelector("#rival-election2");
+const looseScreen = document.querySelector("#loose-screen");
+const looseText = document.querySelector("#loose-text");
+const buttonRetry = document.createElement("button");
+buttonRetry.type = "button";
+buttonRetry.innerText = "Vuelve a intentarlo";
+looseScreen.appendChild(buttonRetry);
 
 // STATE MANAGEMENT FUNCTIONS
 //--------------------------------------------
@@ -30,10 +39,20 @@ const startGame = () => {
   gameObj.gameLoop();
 };
 
+const newGame = () => {
+  looseScreen.style.display = "none";
+  resultScreen.style.display = "none";
+  canvas.style.display = "block";
+  gameObj = new Game();
+  gameObj.gameLoop();
+};
+
 // ADD EVENT LISTENERS
 //--------------------------------------------
 
 startBtn.addEventListener("click", startGame);
+buttonNext.addEventListener("click", newGame);
+buttonRetry.addEventListener("click", newGame);
 
 //Movimiento mainCharacter
 window.addEventListener("keydown", (event) => {

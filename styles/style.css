@@ -22,8 +22,36 @@ canvas {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+#loose-screen button {
+  background-color: #c21e0f;
+  color: white;
+  padding: 10px 20px;
+  font-size: 35px;
+  margin-top: 500px;
+  margin-left: 110px;
+  position: absolute;
+  border-radius: 15px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#loose-screen{
+  display: none;
+}
 
 #win-text {
+  position: absolute;
+  color: white;
+  font-size: 35px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 550px;
+  margin-top: 400px;
+  margin-left: 25px;
+  text-align: center;
+  -webkit-text-stroke: 1px #c21e0f
+}
+#loose-text {
   position: absolute;
   color: white;
   font-size: 35px;
@@ -65,11 +93,44 @@ canvas {
   display: none;
 }
 
+.vs{
+  position: absolute;
+  color: white;
+  font-size: 70px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 550px;
+  margin-top: 290px;
+  margin-left: 270px;
+  -webkit-text-stroke: 1px #c21e0f
+}
+
+#rival-election{
+  height: 100px;
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 400px;
+}
+
 #your-election{
   height: 100px;
   position: absolute;
   margin-top: 280px;
-  margin-left: 50px;
+  margin-left: 110px;
 }
+
+#rival-election2{
+  height: 100px;
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 400px;
+}
+
+#your-election2{
+  height: 100px;
+  position: absolute;
+  margin-top: 280px;
+  margin-left: 110px;
+}
+
 
 
