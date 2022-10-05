@@ -1,10 +1,10 @@
 class Game {
   constructor() {
     this.fondo = new Image();
-    this.fondo.src = "./images/bg.jpg";
+    this.fondo.src = "../images/bg.jpg";
     this.isGameOn = true;
     this.chooseText = new Image();
-    this.chooseText.src = "./images/mainText.png";
+    this.chooseText.src = "../images/mainText.png";
     this.mainCharacter = new MainCharacter();
     this.piedra = new Choose(30, 140, "piedra");
     this.papel = new Choose(30, 220, "papel");

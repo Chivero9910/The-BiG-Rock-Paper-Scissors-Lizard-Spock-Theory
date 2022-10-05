@@ -2,13 +2,13 @@ class Faces{
     constructor(xParam, person){
         this.img = new Image();
         if(person === "sheldon"){
-            this.img.src="./images/sheldon-face.png"
+            this.img.src="../images/sheldon-face.png"
         } else if(person === "leonar"){
-            this.img.src="./images/leonar-face.png"
+            this.img.src="../images/leonar-face.png"
         } else if(person === "howard"){
-            this.img.src="./images/howard-face.png"
+            this.img.src="../images/howard-face.png"
         } else if(person === "rajesh"){
-            this.img.src="./images/rajesh-face.png"
+            this.img.src="../images/rajesh-face.png"
         }
         this.x = xParam;
         this.y = -30;
