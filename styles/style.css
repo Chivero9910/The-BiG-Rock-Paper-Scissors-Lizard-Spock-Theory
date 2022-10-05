@@ -104,6 +104,27 @@ canvas {
   -webkit-text-stroke: 1px #c21e0f
 }
 
+.score{
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 550px;
+  margin-top: px;
+  margin-left: 20px;
+  -webkit-text-stroke: 1px #c21e0f
+}
+#numberScoreFinal{
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 550px;
+  margin-top: 65px;
+  margin-left: 120px;
+  -webkit-text-stroke: 1px #c21e0f
+}
+
 #rival-election{
   height: 100px;
   position: absolute;

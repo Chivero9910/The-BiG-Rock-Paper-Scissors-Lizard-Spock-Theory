@@ -23,9 +23,20 @@ const buttonRetry = document.createElement("button");
 buttonRetry.type = "button";
 buttonRetry.innerText = "Vuelve a intentarlo";
 looseScreen.appendChild(buttonRetry);
+let score = 0;
+const scoreSelectionFinal = document.querySelector("#numberScoreFinal");
+const scoreSelection = document.querySelector("#numberScore")
+
 
 // STATE MANAGEMENT FUNCTIONS
 //--------------------------------------------
+
+const splashScreen = () => {
+  startScreen.style.display = "flex"
+  looseScreen.style.display = "none";
+  resultScreen.style.display = "none";
+  score = 0
+}
 
 const startGame = () => {
   //Ocultar la pantalla de inicio
@@ -52,7 +63,7 @@ const newGame = () => {
 
 startBtn.addEventListener("click", startGame);
 buttonNext.addEventListener("click", newGame);
-buttonRetry.addEventListener("click", newGame);
+buttonRetry.addEventListener("click", splashScreen);
 
 //Movimiento mainCharacter
 window.addEventListener("keydown", (event) => {

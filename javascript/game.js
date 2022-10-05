@@ -28,6 +28,11 @@ class Game {
   }
 
   //FUNCIONES
+
+  gameScore = () => {
+    score++;
+  };
+
   drawFondo = () => {
     ctx.drawImage(this.fondo, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(this.chooseText, 0, 0, canvas.width, canvas.height);
@@ -59,6 +64,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, piedra aplasta a tijeras";
       yourElection.src = "./images/piedra.png";
       rivalElection.src = "./images/tijerasR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "tijeras" && this.election2 === "lagarto") {
       this.isGameOn = false;
@@ -68,6 +75,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, tijeras decapitan al lagarto";
       yourElection.src = "./images/tijeras.png";
       rivalElection.src = "./images/lagartoR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "lagarto" && this.election2 === "papel") {
       this.isGameOn = false;
@@ -77,6 +86,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, lagarto devora al papel";
       yourElection.src = "./images/lagarto.png";
       rivalElection.src = "./images/papelR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "spock" && this.election2 === "tijeras") {
       this.isGameOn = false;
@@ -86,6 +97,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, Spock aplasta a tijeras";
       yourElection.src = "./images/spok.png";
       rivalElection.src = "./images/tijerasR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "tijeras" && this.election2 === "papel") {
       this.isGameOn = false;
@@ -95,6 +108,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, Spock aplasta a tijeras";
       yourElection.src = "./images/tijeras.png";
       rivalElection.src = "./images/papelR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "papel" && this.election2 === "spock") {
       this.isGameOn = false;
@@ -104,6 +119,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, papel desaprueba a Spock";
       yourElection.src = "./images/papel.png";
       rivalElection.src = "./images/spokR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "spock" && this.election2 === "piedra") {
       this.isGameOn = false;
@@ -113,6 +130,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, Spock desintegra la piedra";
       yourElection.src = "./images/spok.png";
       rivalElection.src = "./images/piedraR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "piedra" && this.election2 === "lagarto") {
       this.isGameOn = false;
@@ -122,6 +141,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, piedra aplasta a lagarto";
       yourElection.src = "./images/piedra.png";
       rivalElection.src = "./images/lagartoR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "papel" && this.election2 === "piedra") {
       this.isGameOn = false;
@@ -131,6 +152,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, papel envuelve la piedra";
       yourElection.src = "./images/papel.png";
       rivalElection.src = "./images/piedraR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "spock" && this.election2 === "piedra") {
       this.isGameOn = false;
@@ -140,6 +163,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, piedra aplasta a tijeras";
       yourElection.src = "./images/spok.png";
       rivalElection.src = "./images/piedraR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "lagarto" && this.election2 === "spock") {
       this.isGameOn = false;
@@ -149,6 +174,8 @@ class Game {
         "Enhorabuena, has ganado a Sheldon, lagarto envenena a Spock";
       yourElection.src = "./images/lagarto.png";
       rivalElection.src = "./images/spokR.png";
+      score++;
+      scoreSelection.innerText = score;
     }
     if (this.election2 === "piedra" && this.election1 === "tijeras") {
       this.isGameOn = false;
@@ -157,6 +184,7 @@ class Game {
       looseText.innerText = "Sheldon te ha humillado, piedra aplasta a tijeras";
       yourElection2.src = "./images/tijeras.png";
       rivalElection2.src = "./images/piedraR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "tijeras" && this.election1 === "lagarto") {
       this.isGameOn = false;
@@ -166,6 +194,7 @@ class Game {
         "Sheldon te ha humillado, tijeras decapitan a lagarto";
       yourElection2.src = "./images/lagarto.png";
       rivalElection2.src = "./images/tijerasR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "lagarto" && this.election1 === "spock") {
       this.isGameOn = false;
@@ -174,6 +203,7 @@ class Game {
       looseText.innerText = "Sheldon te ha humillado, lagarto envenena a Spock";
       yourElection2.src = "./images/spok.png";
       rivalElection2.src = "./images/lagartoR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "lagarto" && this.election1 === "papel") {
       this.isGameOn = false;
@@ -182,6 +212,7 @@ class Game {
       looseText.innerText = "Sheldon te ha humillado, lagarto devora el papel";
       yourElection2.src = "./images/papel.png";
       rivalElection2.src = "./images/lagartoR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "spock" && this.election1 === "tijeras") {
       this.isGameOn = false;
@@ -191,6 +222,7 @@ class Game {
         "Sheldon te ha humillado, Spock aplasta las tijeras";
       yourElection2.src = "./images/tijeras.png";
       rivalElection2.src = "./images/spokR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "tijeras" && this.election1 === "papel") {
       this.isGameOn = false;
@@ -199,6 +231,7 @@ class Game {
       looseText.innerText = "Sheldon te ha humillado, tijeras cortan el papel";
       yourElection2.src = "./images/papel.png";
       rivalElection2.src = "./images/tijerasR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "papel" && this.election1 === "spock") {
       this.isGameOn = false;
@@ -207,6 +240,7 @@ class Game {
       looseText.innerText = "Sheldon te ha humillado, papel desaprueba a Spock";
       yourElection2.src = "./images/spok.png";
       rivalElection2.src = "./images/papelR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "spock" && this.election1 === "piedra") {
       this.isGameOn = false;
@@ -216,6 +250,7 @@ class Game {
         "Sheldon te ha humillado, Spock desintegra la piedra";
       yourElection2.src = "./images/piedra.png";
       rivalElection2.src = "./images/spokR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "piedra" && this.election1 === "lagarto") {
       this.isGameOn = false;
@@ -225,6 +260,7 @@ class Game {
         "Sheldon te ha humillado, piedra aplasta al lagarto";
       yourElection2.src = "./images/lagarto.png";
       rivalElection2.src = "./images/piedraR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election2 === "papel" && this.election1 === "piedra") {
       this.isGameOn = false;
@@ -234,6 +270,7 @@ class Game {
         "Sheldon te ha humillado, papel envuelve a la piedra";
       yourElection2.src = "./images/piedra.png";
       rivalElection2.src = "./images/papelR.png";
+      scoreSelectionFinal.innerText = score;
     }
     if (this.election1 === "piedra" && this.election2 === "piedra") {
       this.isGameOn = false;
@@ -242,6 +279,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/piedra.png";
       rivalElection.src = "./images/piedraR.png";
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "papel" && this.election2 === "papel") {
       this.isGameOn = false;
@@ -250,6 +288,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/papel.png";
       rivalElection.src = "./images/papelR.png";
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "tijeras" && this.election2 === "tijeras") {
       this.isGameOn = false;
@@ -258,6 +297,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/tijeras.png";
       rivalElection.src = "./images/tijerasR.png";
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "lagarto" && this.election2 === "lagarto") {
       this.isGameOn = false;
@@ -266,6 +306,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/lagarto.png";
       rivalElection.src = "./images/lagartoR.png";
+      scoreSelection.innerText = score;
     }
     if (this.election1 === "spock" && this.election2 === "spock") {
       this.isGameOn = false;
@@ -274,6 +315,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/spock.png";
       rivalElection.src = "./images/spock.png";
+      scoreSelection.innerText = score;
     }
     if (this.election2 === "piedra" && this.election1 === "piedra") {
       this.isGameOn = false;
@@ -282,6 +324,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/piedra.png";
       rivalElection.src = "./images/piedraR.png";
+      scoreSelection.innerText = score;
     }
     if (this.election2 === "papel" && this.election1 === "papel") {
       this.isGameOn = false;
@@ -290,6 +333,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/papel.png";
       rivalElection.src = "./images/papelR.png";
+      scoreSelection.innerText = score;
     }
     if (this.election2 === "tijeras" && this.election1 === "tijeras") {
       this.isGameOn = false;
@@ -298,6 +342,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/tijeras.png";
       rivalElection.src = "./images/tijerasR.png";
+      scoreSelection.innerText = score;
     }
     if (this.election2 === "lagarto" && this.election1 === "lagarto") {
       this.isGameOn = false;
@@ -306,6 +351,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/lagarto.png";
       rivalElection.src = "./images/lagartoR.png";
+      scoreSelection.innerText = score;
     }
     if (this.election2 === "spock" && this.election1 === "spock") {
       this.isGameOn = false;
@@ -314,6 +360,7 @@ class Game {
       winText.innerText = "Empate, ninguno gana";
       yourElection.src = "./images/spock.png";
       rivalElection.src = "./images/spock.png";
+      scoreSelection.innerText = score;
     }
   };
 
