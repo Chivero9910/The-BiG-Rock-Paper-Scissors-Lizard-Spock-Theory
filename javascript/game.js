@@ -25,6 +25,9 @@ class Game {
     ];
     this.election1;
     this.election2;
+    this.timerX = 50;
+    this.timerH = 700;
+    this.frames = 0;
   }
 
   //FUNCIONES
@@ -36,6 +39,15 @@ class Game {
   drawFondo = () => {
     ctx.drawImage(this.fondo, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(this.chooseText, 0, 0, canvas.width, canvas.height);
+  };
+
+  drawTimer = () => {
+    ctx.fillStyle = "red";
+    ctx.fillRect(this.timerX, 570, this.timerH, 20);
+  };
+
+  timer = () => {
+    this.timerH -= 1;
   };
 
   mainCharacterCollision = () => {
@@ -373,6 +385,8 @@ class Game {
     this.tijeras.drawChoose();
     this.lagarto.drawChoose();
     this.spock.drawChoose();
+    this.drawTimer();
+    setTimeout(this.timer(), 5000);
 
     //Acciones y movimientos de los elementos
     this.mainCharacterCollision();
