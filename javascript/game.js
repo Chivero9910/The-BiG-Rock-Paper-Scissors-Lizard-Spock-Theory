@@ -50,6 +50,10 @@ class Game {
     this.timerH -= 1;
   };
 
+  addFace = () => {
+    
+  }
+
   mainCharacterCollision = () => {
     this.chooseArr.forEach((eachChoose, index) => {
       if (
