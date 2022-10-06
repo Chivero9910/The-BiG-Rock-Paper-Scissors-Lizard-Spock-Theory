@@ -1,20 +1,21 @@
 class Faces{
-    constructor(xParam, person){
+    constructor(person){
         this.img = new Image();
         if(person === "sheldon"){
             this.img.src="../images/sheldon-face.png"
-        } else if(person === "leonar"){
-            this.img.src="../images/leonar-face.png"
+        } else if(person === "leonard"){
+            this.img.src="../images/leonard-face.png"
         } else if(person === "howard"){
             this.img.src="../images/howard-face.png"
         } else if(person === "rajesh"){
             this.img.src="../images/rajesh-face.png"
         }
-        this.x = xParam;
+        this.x = Math.random() * 750;
         this.y = -30;
-        this.w = 30;
-        this.h = 30;
-        this.speed = 2;
+        this.w = 50;
+        this.h = 50;
+        this.speed = 1;
+        this.name = person
     }
 
     drawFaces = () => {

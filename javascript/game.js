@@ -16,6 +16,7 @@ class Game {
     this.tijerasResult = new Choose(30, 300, "tijeras");
     this.lagartoResult = new Choose(30, 380, "lagarto");
     this.spockResult = new Choose(30, 460, "spock");
+
     this.chooseArr = [
       this.piedra,
       this.papel,
@@ -23,11 +24,16 @@ class Game {
       this.lagarto,
       this.spock,
     ];
+
+    this.facesArr2 = ["sheldon", "leonard", "rajesh", "howard"];
+    this.facesArr = [];
+
     this.election1;
     this.election2;
     this.timerX = 50;
     this.timerH = 700;
     this.frames = 0;
+    this.counterFace = 0
   }
 
   //FUNCIONES
@@ -47,29 +53,63 @@ class Game {
   };
 
   timer = () => {
-    this.timerH -= 1;
+    setInterval(() => {
+      this.timerH -= 10;
+    }, 1000);
   };
 
   addFace = () => {
-    
-  }
+    if (this.counterFace < 3 && this.frames % 120 === 0) {
+      let caraAleatoria =
+        this.facesArr2[Math.floor(Math.random() * this.facesArr2.length)];
+      let newFaces = new Faces(caraAleatoria);
+      this.facesArr.push(newFaces);
+    }
+  };
 
   mainCharacterCollision = () => {
-    this.chooseArr.forEach((eachChoose, index) => {
-      if (
-        this.mainCharacter.x < eachChoose.x + eachChoose.w &&
-        this.mainCharacter.x + this.mainCharacter.w > eachChoose.x &&
-        this.mainCharacter.y < eachChoose.y + eachChoose.h &&
-        this.mainCharacter.h + this.mainCharacter.y > eachChoose.y
-      ) {
-        this.election1 = eachChoose.selection;
-        let randomNum1 = Math.random() * 5;
-        let randomNum = Math.floor(randomNum1);
-        this.election2 = this.chooseArr[randomNum].selection;
-        this.conditionals();
-      }
-    });
+    if(this.counterFace >= 3){
+      this.chooseArr.forEach((eachChoose, index) => {
+        if (
+          this.mainCharacter.x < eachChoose.x + eachChoose.w &&
+          this.mainCharacter.x + this.mainCharacter.w > eachChoose.x &&
+          this.mainCharacter.y < eachChoose.y + eachChoose.h &&
+          this.mainCharacter.h + this.mainCharacter.y > eachChoose.y
+        ) {
+          this.election1 = eachChoose.selection;
+          let randomNum1 = Math.random() * 5;
+          let randomNum = Math.floor(randomNum1);
+          this.election2 = this.chooseArr[randomNum].selection;
+          this.conditionals();
+        }
+      });
+    }
+    
   };
+
+  facesCollision = () => {
+    this.facesArr.forEach((eachFace, index) => {
+      if (
+        this.mainCharacter.x < eachFace.x + eachFace.w &&
+        this.mainCharacter.x + this.mainCharacter.w > eachFace.x &&
+        this.mainCharacter.y < eachFace.y + eachFace.h &&
+        this.mainCharacter.h + this.mainCharacter.y > eachFace.y
+      ){
+        if(eachFace.name === "sheldon"){
+          this.counterFace ++
+          
+          this.facesArr.splice(index, 1);
+          
+        } else {
+            this.isGameOn = false;
+            canvas.style.display = "none";
+            looseScreen.style.display = "flex";
+            looseText.innerText = "No has sido capaz de pillar a Sheldon";
+            scoreSelectionFinal.innerText = score;
+        }
+      }
+    })
+  }
 
   conditionals = () => {
     if (this.election1 === "piedra" && this.election2 === "tijeras") {
@@ -374,8 +414,8 @@ class Game {
       canvas.style.display = "none";
       resultScreen.style.display = "flex";
       winText.innerText = "Empate, ninguno gana";
-      yourElection.src = "./images/spock.png";
-      rivalElection.src = "./images/spock.png";
+      yourElection.src = "./images/spok.png";
+      rivalElection.src = "./images/spok.png";
       scoreSelection.innerText = score;
     }
   };
@@ -383,18 +423,26 @@ class Game {
   gameLoop = () => {
     //Dibujado de los elementos
     this.drawFondo();
-    this.mainCharacter.drawMainCharacter();
+
     this.piedra.drawChoose();
     this.papel.drawChoose();
     this.tijeras.drawChoose();
     this.lagarto.drawChoose();
     this.spock.drawChoose();
     this.drawTimer();
-    setTimeout(this.timer(), 5000);
+    this.addFace();
+    this.facesArr.forEach((eachFace) => {
+      eachFace.drawFaces();
+    });
+    this.facesArr.forEach((eachFace) => {
+      eachFace.moveFaces();
+    });
+    this.mainCharacter.drawMainCharacter();
+    this.facesCollision();
 
     //Acciones y movimientos de los elementos
     this.mainCharacterCollision();
-
+    this.frames++;
     //Control de la recursión
     if (this.isGameOn === true) {
       requestAnimationFrame(this.gameLoop);

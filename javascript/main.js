@@ -48,6 +48,8 @@ const startGame = () => {
   //Nueva versión del juego
   gameObj = new Game();
   gameObj.gameLoop();
+  gameObj.timer()
+  
 };
 
 const newGame = () => {
@@ -56,6 +58,8 @@ const newGame = () => {
   canvas.style.display = "block";
   gameObj = new Game();
   gameObj.gameLoop();
+  gameObj.timer()
+  
 };
 
 // ADD EVENT LISTENERS
