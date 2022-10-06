@@ -50,16 +50,17 @@ class Game {
   drawTimer = () => {
     ctx.fillStyle = "red";
     ctx.fillRect(this.timerX, 570, this.timerH, 20);
+    
   };
 
   timer = () => {
     setInterval(() => {
-      this.timerH -= 10;
-    }, 1000);
+      this.timerH -= 1;
+    }, 100);
   };
 
   addFace = () => {
-    if (this.counterFace < 3 && this.frames % 120 === 0) {
+    if (this.counterFace < 3 && this.frames % 90 === 0) {
       let caraAleatoria =
         this.facesArr2[Math.floor(Math.random() * this.facesArr2.length)];
       let newFaces = new Faces(caraAleatoria);
@@ -71,7 +72,7 @@ class Game {
     if(this.counterFace >= 3){
       this.chooseArr.forEach((eachChoose, index) => {
         if (
-          this.mainCharacter.x < eachChoose.x + eachChoose.w &&
+          this.mainCharacter.x < eachChoose.x  + eachChoose.w &&
           this.mainCharacter.x + this.mainCharacter.w > eachChoose.x &&
           this.mainCharacter.y < eachChoose.y + eachChoose.h &&
           this.mainCharacter.h + this.mainCharacter.y > eachChoose.y
@@ -100,13 +101,15 @@ class Game {
           
           this.facesArr.splice(index, 1);
           
-        } else {
+        } else if (eachFace.name !== "sheldon") {
             this.isGameOn = false;
             canvas.style.display = "none";
             looseScreen.style.display = "flex";
-            looseText.innerText = "No has sido capaz de pillar a Sheldon";
+            looseText.innerText = "No has sido capaz de pillar los Sheldons";
             scoreSelectionFinal.innerText = score;
-        }
+            vs.innerText = ""
+            
+        } 
       }
     })
   }
@@ -431,6 +434,7 @@ class Game {
     this.spock.drawChoose();
     this.drawTimer();
     this.addFace();
+    
     this.facesArr.forEach((eachFace) => {
       eachFace.drawFaces();
     });
@@ -443,9 +447,20 @@ class Game {
     //Acciones y movimientos de los elementos
     this.mainCharacterCollision();
     this.frames++;
+    if(this.timerH <= 0){
+      this.isGameOn = false;
+        canvas.style.display = "none";
+        looseScreen.style.display = "flex";
+        looseText.innerText = "No has sido capaz de pillar los Sheldons";
+        scoreSelectionFinal.innerText = score;
+        vs.innerText = ""
+    }
+    
+    
     //Control de la recursión
     if (this.isGameOn === true) {
       requestAnimationFrame(this.gameLoop);
     }
+    
   };
 }

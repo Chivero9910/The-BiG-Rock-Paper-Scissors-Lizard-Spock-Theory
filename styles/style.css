@@ -93,7 +93,18 @@ canvas {
   display: none;
 }
 
-.vs{
+#vs{
+  position: absolute;
+  color: white;
+  font-size: 70px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 550px;
+  margin-top: 290px;
+  margin-left: 270px;
+  -webkit-text-stroke: 1px #c21e0f
+}
+
+#vs2{
   position: absolute;
   color: white;
   font-size: 70px;

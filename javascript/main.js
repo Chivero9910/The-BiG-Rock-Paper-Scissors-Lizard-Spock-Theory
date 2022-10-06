@@ -4,6 +4,7 @@
 const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d");
 const startScreen = document.querySelector("#splash-screen");
+const body = document.querySelector("body")
 const startBtn = document.querySelector("#start-btn");
 const resultScreen = document.querySelector("#result-screen");
 const canvasResult = document.querySelector("#result-canvas");
@@ -26,6 +27,8 @@ looseScreen.appendChild(buttonRetry);
 let score = 0;
 const scoreSelectionFinal = document.querySelector("#numberScoreFinal");
 const scoreSelection = document.querySelector("#numberScore")
+const vs = document.querySelector("#vs2")
+let faceObj;
 
 
 // STATE MANAGEMENT FUNCTIONS
@@ -58,7 +61,9 @@ const newGame = () => {
   canvas.style.display = "block";
   gameObj = new Game();
   gameObj.gameLoop();
-  gameObj.timer()
+  gameObj.timer();
+  faceObj = new Faces()
+  faceObj.increaseSpeed()
   
 };
 
