@@ -2,13 +2,13 @@ class Faces{
     constructor(person){
         this.img = new Image();
         if(person === "sheldon"){
-            this.img.src="../images/sheldon-face.png"
+            this.img.src="./images/sheldon-face.png"
         } else if(person === "leonard"){
-            this.img.src="../images/leonard-face.png"
+            this.img.src="./images/leonard-face.png"
         } else if(person === "howard"){
-            this.img.src="../images/howard-face.png"
+            this.img.src="./images/howard-face.png"
         } else if(person === "rajesh"){
-            this.img.src="../images/rajesh-face.png"
+            this.img.src="./images/rajesh-face.png"
         }
         this.x = Math.random() * 750;
         this.y = -30;
