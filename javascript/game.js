@@ -254,6 +254,7 @@ class Game {
       yourElection2.src = "./images/tijeras.png";
       rivalElection2.src = "./images/piedraR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
     }
     if (this.election2 === "tijeras" && this.election1 === "lagarto") {
       this.isGameOn = false;
@@ -264,6 +265,7 @@ class Game {
       yourElection2.src = "./images/lagarto.png";
       rivalElection2.src = "./images/tijerasR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
     }
     if (this.election2 === "lagarto" && this.election1 === "spock") {
       this.isGameOn = false;
@@ -273,6 +275,8 @@ class Game {
       yourElection2.src = "./images/spok.png";
       rivalElection2.src = "./images/lagartoR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
+
     }
     if (this.election2 === "lagarto" && this.election1 === "papel") {
       this.isGameOn = false;
@@ -282,6 +286,8 @@ class Game {
       yourElection2.src = "./images/papel.png";
       rivalElection2.src = "./images/lagartoR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
+
     }
     if (this.election2 === "spock" && this.election1 === "tijeras") {
       this.isGameOn = false;
@@ -292,6 +298,8 @@ class Game {
       yourElection2.src = "./images/tijeras.png";
       rivalElection2.src = "./images/spokR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
+
     }
     if (this.election2 === "tijeras" && this.election1 === "papel") {
       this.isGameOn = false;
@@ -301,6 +309,8 @@ class Game {
       yourElection2.src = "./images/papel.png";
       rivalElection2.src = "./images/tijerasR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
+
     }
     if (this.election2 === "papel" && this.election1 === "spock") {
       this.isGameOn = false;
@@ -310,6 +320,8 @@ class Game {
       yourElection2.src = "./images/spok.png";
       rivalElection2.src = "./images/papelR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
+
     }
     if (this.election2 === "spock" && this.election1 === "piedra") {
       this.isGameOn = false;
@@ -320,6 +332,8 @@ class Game {
       yourElection2.src = "./images/piedra.png";
       rivalElection2.src = "./images/spokR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
+
     }
     if (this.election2 === "piedra" && this.election1 === "lagarto") {
       this.isGameOn = false;
@@ -330,6 +344,8 @@ class Game {
       yourElection2.src = "./images/lagarto.png";
       rivalElection2.src = "./images/piedraR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
+
     }
     if (this.election2 === "papel" && this.election1 === "piedra") {
       this.isGameOn = false;
@@ -340,6 +356,8 @@ class Game {
       yourElection2.src = "./images/piedra.png";
       rivalElection2.src = "./images/papelR.png";
       scoreSelectionFinal.innerText = score;
+      vs.innerText = "VS"
+
     }
     if (this.election1 === "piedra" && this.election2 === "piedra") {
       this.isGameOn = false;
@@ -349,6 +367,7 @@ class Game {
       yourElection.src = "./images/piedra.png";
       rivalElection.src = "./images/piedraR.png";
       scoreSelection.innerText = score;
+
     }
     if (this.election1 === "papel" && this.election2 === "papel") {
       this.isGameOn = false;

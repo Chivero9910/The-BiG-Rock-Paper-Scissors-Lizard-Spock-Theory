@@ -31,7 +31,7 @@ const vs = document.querySelector("#vs2")
 let faceObj;
 const music = new Audio("./images/music.mp3");
 music.play();
-music.loop =true;
+music.loop = true;
 music.volume = 0.05
 
 
