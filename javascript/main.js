@@ -29,10 +29,8 @@ const scoreSelectionFinal = document.querySelector("#numberScoreFinal");
 const scoreSelection = document.querySelector("#numberScore")
 const vs = document.querySelector("#vs2")
 let faceObj;
-const music = new Audio("./images/music.mp3");
-music.play();
-music.loop = true;
-music.volume = 0.05
+const musicMain = document.querySelector("#music")
+musicMain.volume = 0.05
 
 
 // STATE MANAGEMENT FUNCTIONS
@@ -90,3 +88,4 @@ window.addEventListener("keydown", (event) => {
     gameObj.mainCharacter.mainCharacterYPlus();
   }
 });
+
