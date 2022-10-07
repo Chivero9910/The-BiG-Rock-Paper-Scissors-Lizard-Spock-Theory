@@ -1,20 +1,21 @@
 # NAME OF YOUR PROYECT
 
 
-## [See the Game](www.your-url-here.com)
-NOTE: above link will be added later
+## [See the Game](https://chivero9910.github.io/The-BiG-Rock-Paper-Scissors-Lizard-Spock-Theory/)
 
 # Description
 
-Add here a simple description of your game.
+Se trata del juego del popular personaje de The Big Bang Theory Sheldoon Cooper. Piedra, Papel, Tijeras, Lagarto, Spock. Donde según comenta el autor del juego las reglas son muy sencillas.
+Las tijeras cortan el papel, el papel envuelve la piedra, la piedra aplasta al lagarto, el lagarto envenena a Spock, Spock aplasta las tijeras, las tijeras decapitan al lagarto, el lagarto devora el papel, el papel desaprueba a Spock, Spock desintegra la piedra y, como siempre, la piedra aplasta las tijeras.
 
-# Main Functionalities
+# MVP
 
-- List here the main functionalities your game will have
+- El juego tiene diferentes elecciones y un objeto para poder elegir tu elección.
+- El sistema realiza una elección Random y se enfrenta a tu elección.
 
 # Backlog Functionalities
 
-- List here the cool (but not essential) functionalities your game could have
+- Varios scores.
 
 # Proyect Structure
 
@@ -27,39 +28,47 @@ Example:
 ## main.js
 
 - startGame()
+- splashScreen()
+- newGame()
 
 ## game.js
 
-- Game () {
-    this.player;
-}
+
+- gameScore () {}
+- drawFondo () {}
+- drawTimer () {}
+- timer () {}
+- addFace () {}
+- mainCharacterCollision () {}
+- facesCollision () {}
+- conditionals () {}
 - gameLoop () {}
-- checkCollisions () {}
 
-## player.js 
+## main-character.js 
 
-- Player () {
-    this.x;
-    this.y;
-    this.w;
-    this.h;
-}
-- drawPlayer () {}
-- movePlayer () {}
+- drawMainCharacter ()
+- mainCharacterX ()
+- mainCharacterXPlus()
+- MainCharacterY()
+- MainCharacterYPlus()
+
+## faces.js
+
+- drawFaces()
+- moveFaces()
+- increaseSpeed()
+
+## choose.js
+
+- drawChoose()
+
+## choose-result.js
+
+- drawChoose()
 
 # States and Transitions
 
-- List here the different pages your game will have. For example: Start Screen, Game Screen, Win Screen, etc.
-
-# Tasks (Optional)
-
-- List of individual Tasks you will need to finish the game from zero to an amazing game!
-- Note: If using Trello or github proyect to keep track of tasks, then you can remove this section.
-
-# Extra Links (The links can be added later when available)
-
-### Trello
-[Link](www.your-url-here.com)
+- Splash-Screen, Canvas, Result-screen y loose-screen
 
 ### Slides
-[Link](www.your-url-here.com)
+[Link](https://docs.google.com/presentation/d/1OGWTNkMUBUlqHUy39DnCYub6ppxkboYtYGYmK_Qnej4/edit?usp=sharing)
