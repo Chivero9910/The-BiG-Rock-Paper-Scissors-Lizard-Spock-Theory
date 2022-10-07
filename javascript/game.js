@@ -16,6 +16,9 @@ class Game {
     this.tijerasResult = new Choose(30, 300, "tijeras");
     this.lagartoResult = new Choose(30, 380, "lagarto");
     this.spockResult = new Choose(30, 460, "spock");
+    this.music = new Audio('./images/sonidoFaces.mp3');
+    this.musicLoose = new Audio("./images/loosePerder.mp3")
+
 
     this.chooseArr = [
       this.piedra,
@@ -98,6 +101,7 @@ class Game {
       ){
         if(eachFace.name === "sheldon"){
           this.counterFace ++
+          this.music.play();
           
           this.facesArr.splice(index, 1);
           
@@ -108,6 +112,7 @@ class Game {
             looseText.innerText = "No has sido capaz de pillar los Sheldons";
             scoreSelectionFinal.innerText = score;
             vs.innerText = ""
+            this.musicLoose.play();
             
         } 
       }
