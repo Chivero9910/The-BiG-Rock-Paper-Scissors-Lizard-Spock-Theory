@@ -63,7 +63,7 @@ class Game {
   };
 
   addFace = () => {
-    if (this.counterFace < 3 && this.frames % 90 === 0) {
+    if (this.counterFace < 3 && this.frames % 70 === 0) {
       let caraAleatoria =
         this.facesArr2[Math.floor(Math.random() * this.facesArr2.length)];
       let newFaces = new Faces(caraAleatoria);
@@ -105,7 +105,7 @@ class Game {
           
           this.facesArr.splice(index, 1);
           
-        } else if (eachFace.name !== "sheldon") {
+        } else if (eachFace.name === "howard") {
             this.isGameOn = false;
             canvas.style.display = "none";
             looseScreen.style.display = "flex";
@@ -114,7 +114,12 @@ class Game {
             vs.innerText = ""
             this.musicLoose.play();
             
-        } 
+        } else {
+          this.counterFace --
+          this.musicLoose.play();
+          
+          this.facesArr.splice(index, 1);
+        }
       }
     })
   }

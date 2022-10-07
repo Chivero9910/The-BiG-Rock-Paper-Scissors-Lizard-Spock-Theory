@@ -14,7 +14,7 @@ class Faces{
         this.y = -30;
         this.w = 50;
         this.h = 50;
-        this.speed = 2;
+        this.speed = 1.5;
         this.name = person
     }
 
@@ -27,7 +27,7 @@ class Faces{
     }
 
     increaseSpeed = () => {
-        this.speed = this.speed + 100
+        this.speed = this.speed + 2
     }
  
 
